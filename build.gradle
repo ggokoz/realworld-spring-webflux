@@ -2,6 +2,8 @@ plugins {
 	id 'org.springframework.boot' version '2.5.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id "org.sonarqube" version "3.3"
+
 }
 
 group = 'com.realworld'
@@ -40,4 +42,12 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "ggokoz_realworld-spring-webflux"
+    property "sonar.organization", "ggokoz"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
